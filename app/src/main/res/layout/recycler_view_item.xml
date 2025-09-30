@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="horizontal"
+              android:padding="8dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+  <ImageView
+      android:id="@+id/transacaoImage"
+      android:layout_width="120dp"
+      android:layout_height="120dp"
+      tools:src="@drawable/add_circle" />
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:padding="5dp"
+      android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/transacaoName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Débito" />
+
+    <TextView
+        android:id="@+id/transacaoValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="200" />
+  </LinearLayout>
+</LinearLayout>
