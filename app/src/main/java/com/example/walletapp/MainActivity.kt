@@ -25,4 +25,13 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, CadastroActivity::class.java)
         startActivity(intent)
     }
+
+    fun telaExtrato(view: View){
+        val intent = Intent(this, CadastroActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun sair(view: View) {
+        finish()
+    }
 }
