@@ -5,4 +5,8 @@ data class Transaction(
     val tipo: String, // débito(gastos) e crédito(ganhos)
     val descricao: String, // descricao doq é
     val valor: Double // valor da operação
-)
+){
+    override fun toString(): String {
+        return tipo;
+    }
+}

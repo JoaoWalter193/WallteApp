@@ -2,16 +2,11 @@ package com.example.walletapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.telecom.Call
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.recyclerview.widget.RecyclerView
-import com.example.walletapp.dao.TransactionDAO
-import com.example.walletapp.data.db.DBHelper
-import com.example.walletapp.data.model.Transaction
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,8 +22,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
     fun goExtratoActivity(view: View) {
         val intent = Intent(this, ExtratoActivity::class.java)
+        startActivity(intent)
+    }
+    fun telaCadastro(view: View){
+        val intent = Intent(this, CadastroActivity::class.java)
         startActivity(intent)
     }
 }

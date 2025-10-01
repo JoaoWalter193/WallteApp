@@ -32,11 +32,10 @@ class ExtratoAdapter(private val context: Context)
         holder.transacaoValue.text = transacao.valor.toString()
 
         if (transacao.tipo.equals("credito", ignoreCase = true)) {
-            holder.transacaoImage.setImageResource(R.drawable.add_circle)
+            holder.transacaoImage.setImageResource(R.drawable.credito)
 
         } else {
-            // Use o nome do seu arquivo PNG de débito aqui
-            holder.transacaoImage.setImageResource(R.drawable.remove)
+            holder.transacaoImage.setImageResource(R.drawable.debito)
         }
     }
 

@@ -9,8 +9,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/extratoRV"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="363dp"
+        android:layout_height="446dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
@@ -19,6 +19,64 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:itemCount="4"
+        app:layout_constraintVertical_bias="0.443"
+        tools:itemCount="6"
         tools:listitem="@layout/recycler_view_item" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="356dp"
+        android:layout_height="161dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.032">
+
+        <RadioButton
+            android:id="@+id/radioTudo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Tudo" />
+
+        <RadioButton
+            android:id="@+id/radioCredito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crédito" />
+
+        <RadioButton
+            android:id="@+id/radioDebito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Débito" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="voltar"
+        android:text="Voltar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.934" />
+
+    <TextView
+        android:id="@+id/textTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.798" />
 </androidx.constraintlayout.widget.ConstraintLayout>

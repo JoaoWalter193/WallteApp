@@ -10,9 +10,6 @@ class TransactionDAO(private val context: Context) {
 
     private val dbHelper = DBHelper(context)
 
-
-    //TEM QUE FAZER CREATE E READ E PESQUISA CUSTOM PARA BUSCAR SO CREDITO OU SO DEBITO
-
    //CREATE
    fun createTrasaction(transaction: Transaction): Long {
        val db = dbHelper.writableDatabase
@@ -45,7 +42,7 @@ class TransactionDAO(private val context: Context) {
 
     fun getDebitoTransactions(): List<Transaction>{
         val db = dbHelper.readableDatabase;
-        val cursor: Cursor = db.query(DBHelper.TABLE_NAME, null,"tipo=debito",null,null,null,null)
+        val cursor: Cursor = db.query(DBHelper.TABLE_NAME, null,"tipo='debito'",null,null,null,null)
         val transactionList = mutableListOf<Transaction>()
         while (cursor.moveToNext()){
             val id = cursor.getInt(cursor.getColumnIndexOrThrow("id"))
@@ -61,7 +58,7 @@ class TransactionDAO(private val context: Context) {
 
     fun getCreditoTransactions(): List<Transaction>{
         val db = dbHelper.readableDatabase;
-        val cursor: Cursor = db.query(DBHelper.TABLE_NAME, null,"tipo=credito",null,null,null,null)
+        val cursor: Cursor = db.query(DBHelper.TABLE_NAME, null,"tipo='credito'",null,null,null,null)
         val transactionList = mutableListOf<Transaction>()
         while (cursor.moveToNext()){
             val id = cursor.getInt(cursor.getColumnIndexOrThrow("id"))
@@ -75,5 +72,20 @@ class TransactionDAO(private val context: Context) {
         return transactionList
     }
 
+
+    fun calcularValor(): Double {
+        var valoresDebito = getDebitoTransactions()
+        var valoresCredito = getCreditoTransactions()
+        var valorTotal = 0.0
+
+        for (valor in valoresDebito) {
+            valorTotal -= valor.valor
+        }
+
+        for (valor in valoresCredito) {
+            valorTotal += valor.valor
+        }
+        return valorTotal
+    }
 
 }

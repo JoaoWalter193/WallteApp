@@ -1,6 +1,11 @@
 package com.example.walletapp
 
 import android.os.Bundle
+import android.view.View
+import android.widget.ImageView
+import android.widget.RadioButton
+import android.widget.RadioGroup
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,6 +21,13 @@ class ExtratoActivity : AppCompatActivity() {
     private lateinit var extratoAdapter: ExtratoAdapter
     private lateinit var extratoRecyclerView: RecyclerView
 
+    private lateinit var radioGroup: RadioGroup
+    private lateinit var radioTudo: RadioButton
+    private lateinit var radioCredito: RadioButton
+    private lateinit var radioDebito: RadioButton
+
+    private lateinit var textTotal: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -24,8 +36,15 @@ class ExtratoActivity : AppCompatActivity() {
         transactionDAO = TransactionDAO(this)
         extratoRecyclerView = findViewById(R.id.extratoRV)
 
-        adicionarDadosDeTesteSeVazio()
+        radioGroup = findViewById(R.id.radioGroup)
+        radioTudo = findViewById(R.id.radioTudo)
+        radioCredito = findViewById(R.id.radioCredito)
+        radioDebito = findViewById(R.id.radioDebito)
+
+        textTotal = findViewById<TextView>(R.id.textTotal)
+        textTotal.setText(transactionDAO.calcularValor().toString())
         setupRecyclerView()
+        setupFilterListener()
         loadTransactions()
 
 
@@ -42,8 +61,18 @@ class ExtratoActivity : AppCompatActivity() {
         extratoRecyclerView.layoutManager = LinearLayoutManager(this)
     }
 
+    private fun setupFilterListener() {
+        radioGroup.setOnCheckedChangeListener { group, checkedId ->
+            loadTransactions()
+        }
+    }
+
     private fun loadTransactions() {
-        val transactions = transactionDAO.getAllTransactions()
+        val transactions = when {
+            radioCredito.isChecked -> transactionDAO.getCreditoTransactions()
+            radioDebito.isChecked -> transactionDAO.getDebitoTransactions()
+            else -> transactionDAO.getAllTransactions()
+        }
         extratoAdapter.atualizarDados(transactions)
     }
 
@@ -53,5 +82,10 @@ class ExtratoActivity : AppCompatActivity() {
             transactionDAO.createTrasaction(Transaction(tipo = "debito", descricao = "Aluguel", valor = 1500.00))
             transactionDAO.createTrasaction(Transaction(tipo = "debito", descricao = "Compras no Supermercado", valor = 550.75))
         }
+    }
+
+
+    fun voltar(view: View) {
+        finish()
     }
 }
