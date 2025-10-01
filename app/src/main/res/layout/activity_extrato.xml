@@ -5,21 +5,21 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0c2464"
     tools:context=".ExtratoActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/extratoRV"
-        android:layout_width="363dp"
-        android:layout_height="446dp"
+        android:layout_width="319dp"
+        android:layout_height="392dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textTotal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.443"
+        app:layout_constraintVertical_bias="0.888"
         tools:itemCount="6"
         tools:listitem="@layout/recycler_view_item" />
 
@@ -36,22 +36,28 @@
 
         <RadioButton
             android:id="@+id/radioTudo"
+            style="@android:style/Widget.Material.Light.CompoundButton.RadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:buttonTint="#EDE654"
             android:checked="true"
-            android:text="Tudo" />
+            android:text="Tudo"
+            android:textColor="#EDE654" />
 
         <RadioButton
             android:id="@+id/radioCredito"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Crédito" />
+            android:text="Crédito"
+            android:textColor="#EDE654" />
 
         <RadioButton
             android:id="@+id/radioDebito"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Débito" />
+            android:text="Débito"
+            android:textColor="#EDE654"
+            android:textColorLink="#EDE654" />
 
     </RadioGroup>
 
@@ -59,8 +65,11 @@
         android:id="@+id/btnVoltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#EDE654"
         android:onClick="voltar"
         android:text="Voltar"
+        android:textColor="#0c2464"
+        app:iconTint="#EDE654"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -72,11 +81,12 @@
         android:id="@+id/textTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="#EDE654"
+        android:textSize="36dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnVoltar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.798" />
+        app:layout_constraintVertical_bias="0.986" />
 </androidx.constraintlayout.widget.ConstraintLayout>

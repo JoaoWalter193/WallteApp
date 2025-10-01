@@ -5,10 +5,22 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0c2464"
     android:onClick="telaCadastro"
     tools:context=".MainActivity">
 
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13"
+        app:srcCompat="@drawable/logo_din_din" />
 
     <TextView
         android:id="@+id/textView"
@@ -16,61 +28,64 @@
         android:layout_height="wrap_content"
 
         android:onClick="goExtratoActivity"
-        android:text="DinDin Wallte"
+        android:text="DinDin Wallet"
+        android:textColor="#fff"
+        android:textColorLink="#fff"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
-
-
+        app:layout_constraintVertical_bias="0.397" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="300dp"
         android:layout_height="60dp"
+        android:backgroundTint="#EDE654"
         android:onClick="telaCadastro"
         android:text="Cadastrar Operacao"
+        android:textColor="#0c2464"
         android:textSize="18sp"
-        android:backgroundTint="#B8860B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.442" />
+        app:layout_constraintVertical_bias="0.532" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="300dp"
         android:layout_height="60dp"
+        android:backgroundTint="#EDE654"
         android:onClick="telaExtrato"
         android:text="Ver Extrato"
+        android:textColor="#0c2464"
         android:textSize="18sp"
-        android:backgroundTint="#B8860B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.564" />
+        app:layout_constraintVertical_bias="0.654" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="300dp"
         android:layout_height="60dp"
+        android:backgroundTint="#EDE654"
         android:onClick="sair"
         android:text="Sair"
+        android:textColor="#0c2464"
         android:textSize="18sp"
-        android:backgroundTint="#B8860B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.681" />
+        app:layout_constraintVertical_bias="0.77" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

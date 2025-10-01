@@ -8,26 +8,32 @@
 
   <ImageView
       android:id="@+id/transacaoImage"
-      android:layout_width="120dp"
-      android:layout_height="120dp"
+      android:layout_width="80dp"
+      android:layout_height="80dp"
       tools:src="@drawable/add_circle" />
+
   <LinearLayout
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+      android:layout_height="75dp"
       android:layout_gravity="center"
-      android:padding="5dp"
-      android:orientation="vertical">
+      android:orientation="vertical"
+      android:padding="5dp">
 
     <TextView
         android:id="@+id/transacaoName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#EDE654"
+        android:textSize="20dp"
         tools:text="Débito" />
 
     <TextView
         android:id="@+id/transacaoValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:textColor="#EDE654"
+        android:textSize="20dp"
         tools:text="200" />
   </LinearLayout>
 </LinearLayout>

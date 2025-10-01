@@ -1,5 +1,6 @@
 package com.example.walletapp
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
@@ -43,6 +44,12 @@ class ExtratoActivity : AppCompatActivity() {
 
         textTotal = findViewById<TextView>(R.id.textTotal)
         textTotal.setText(transactionDAO.calcularValor().toString())
+        if (transactionDAO.calcularValor() > 0) {
+            textTotal.setTextColor(Color.GREEN)
+        }
+        if (transactionDAO.calcularValor() < 0) {
+            textTotal.setTextColor(Color.parseColor("#FF4646"))
+        }
         setupRecyclerView()
         setupFilterListener()
         loadTransactions()
