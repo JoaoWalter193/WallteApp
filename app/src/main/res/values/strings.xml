@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WalletApp</string>
+    <string name="app_name">DinDin Wallet</string>
 
     <string-array name="spinner_items">
         <item>debito</item>
