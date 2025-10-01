@@ -13,3 +13,36 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Build
+/build/
+/app/build/
+/captures/
+/.externalNativeBuild/
+
+# IntelliJ / Android Studio
+.idea/
+/*.iml
+.gradle/
+/local.properties
+
+# Gradle
+.gradle/
+/build/
+
+# Mac
+.DS_Store
+
+# Log files
+*.log
+
+# Kotlin
+*.kotlin_module
+
+# Android Studio generated files
+*.hprof
+
+# Others
+.navigation/
+output.json
+
